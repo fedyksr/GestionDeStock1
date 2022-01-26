@@ -17,10 +17,10 @@ public class AbstractEntity implements Serializable {
     @GeneratedValue
     private Integer id;
     @CreatedDate
-    @Column(name= "creationDate" nullabel = false)
+    @Column(name="creationDate" nullabel= false)
     private Instant creationDate;
     @LastModifiedDate
-    @Column(name = "lastModifierDate" nullable = false)
+    @Column(name ="lastModifierDate"nullable = false)
     private Instant lastModifierDate;
 
 }

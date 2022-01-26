@@ -1,0 +1,31 @@
+package com.fedy.GestionDeStock.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@Embeddable
+public class Adresse {
+    @Column(name = "address1")
+    private String address1;
+
+    @Column(name = "address2")
+    private String address2;
+
+    @Column(name = "ville")
+    private String ville;
+
+    @Column(name = "postcode")
+    private String codePostale;
+
+    @Column(name = "pays")
+    private String pays;
+}
