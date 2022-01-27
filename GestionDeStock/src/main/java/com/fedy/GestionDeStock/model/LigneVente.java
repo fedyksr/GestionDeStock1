@@ -1,17 +1,27 @@
 package com.fedy.GestionDeStock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "LigneVente")
+@Table(name = "lignevente")
 public class LigneVente extends AbstractEntity{
+    @ManyToOne
+    @JoinColumn(name = "idvente")
+    private Ventes vente;
+
+    @Column(name = "quantite")
+    private BigDecimal quantite;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
+
 }
